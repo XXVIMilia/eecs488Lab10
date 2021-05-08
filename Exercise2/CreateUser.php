@@ -12,13 +12,20 @@ function checkUserExist(){
     }
     else{
         $query = "select user_id from users where exists (Select user_id from users where user_id = '$user')";
-        if(!($result = $mysqli->query($query))){
-            $mysqli->close();
-            return(true);
+        if($result = $mysqli->query($query)){
+            if($result->num_rows > 0){
+                $mysqli->close();
+                return(false);
+            }
+            else{
+                $mysqli->close();
+                return(true);
+            }
         }
         else{
             $mysqli->close();
-            return(false);
+            printf("Command Failed");
+            die("Connection failed: " . $mysqli->connect_error);
         }
     }
 }
