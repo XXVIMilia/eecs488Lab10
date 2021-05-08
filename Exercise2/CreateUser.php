@@ -5,13 +5,13 @@ $mysqli = new mysqli("mysql.eecs.ku.edu", "chaunceyhester", "eithae7u", "chaunce
 
 
 function checkUserExist(){
-    if($mysqli.connect_errno){
-        printf("No Connect: %s\n",$mysqli.connect_errno);
+    if($mysqli->connect_errno){
+        printf("No Connect: %s\n",$mysqli->connect_errno);
         exit();
     }
     else{
         $query = "select user_id from users where exists (Select user_id from users where user_id == $user)";
-        if($result = $mysqli.query($query)){
+        if($result = $mysqli->query($query)){
             return(true);
         }
         else{
@@ -31,7 +31,7 @@ if($user != ""){
     if(checkUserExist()){
         echo "<h1> Thank You for creating an account, $user</h1>";
         $query = "insert into users values ($users)";
-        if($result = $mysqli.query($query)){
+        if($result = $mysqli->query($query)){
             echo "<h1> Account creation successful</h1>";
         }
         else{
@@ -44,6 +44,9 @@ if($user != ""){
     }
 
 }
+
+
+$mysqli->close();
 
 echo "</html>";
 
