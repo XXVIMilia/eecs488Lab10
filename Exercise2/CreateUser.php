@@ -10,7 +10,7 @@ function checkUserExist(){
         exit();
     }
     else{
-        $query = "select user_id from users where exists (Select user_id from users where user_id = $user)";
+        $query = "select user_id from user_id where exists (Select user_id from user_id where user_id = $user)";
         if($result = $mysqli->query($query)){
             return(true);
         }
