@@ -6,7 +6,7 @@ $mysqli = new mysqli("mysql.eecs.ku.edu", "chaunceyhester", "eithae7u", "chaunce
 
 function checkUserExist(){
     if($mysqli.connect_errno){
-        printf("No Connect: %s\n",$mysqli->connect_errno);
+        printf("No Connect: %s\n",$mysqli.connect_errno);
         exit();
     }
     else{
