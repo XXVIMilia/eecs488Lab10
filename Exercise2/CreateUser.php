@@ -27,23 +27,25 @@ echo "<html>";
 echo "<head>";
 echo "</head>";
 
-if($user != ""){
-    if(checkUserExist()){
-        echo "<h1> Thank You for creating an account, $user</h1>";
-        $query = "Insert into users values ($users)";
-        if($result = $mysqli->query($query)){
-            echo "<h1> Account creation successful</h1>";
-        }
-        else{
-            echo "<h1> Account creation unsuccessful</h1>";
-        }
+// if($user != ""){
+//     if(checkUserExist()){
+//         echo "<h1> Thank You for creating an account, $user</h1>";
+//         $query = "Insert into users values ($users)";
+//         if($result = $mysqli->query($query)){
+//             echo "<h1> Account creation successful</h1>";
+//         }
+//         else{
+//             echo "<h1> Account creation unsuccessful</h1>";
+//         }
 
-    }
-    else{
-        echo "<h1> The following username is taken: $user</h1>";
-    }
+//     }
+//     else{
+//         echo "<h1> The following username is taken: $user</h1>";
+//     }
 
-}
+// }
+
+echo "<h1> The following username is taken: $user</h1>";
 
 
 
