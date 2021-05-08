@@ -11,7 +11,7 @@ function checkUserExist(){
         die("Connection failed: " . $mysqli->connect_error);
     }
     else{
-        $query = "select user_id from users where exists (Select user_id from users where user_id = $user)";
+        $query = "select user_id from users where exists (Select user_id from users where user_id = '$user')";
         if($result = $mysqli->query($query)){
             printf("I made it here\n");
             $mysqli->close();
