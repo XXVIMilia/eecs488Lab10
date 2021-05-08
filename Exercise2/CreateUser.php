@@ -5,12 +5,12 @@ $mysqli = new mysqli("mysql.eecs.ku.edu", "chaunceyhester", "eithae7u", "chaunce
 
 
 function checkUserExist(){
-    printf("I made it here\n");
     if($mysqli->connect_error){
         printf("No Connect: %s\n",$mysqli->connect_error);
         die("Connection failed: " . $conn->connect_error);
     }
     else{
+        printf("I made it here\n");
         $query = "select user_id from user_id where exists (Select user_id from user_id where user_id = $user)";
         if($result = $mysqli->query($query)){
             return(true);
