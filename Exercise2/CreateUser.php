@@ -2,9 +2,10 @@
 
 $user = $_POST["user"];
 $mysqli = new mysqli("mysql.eecs.ku.edu", "chaunceyhester", "eithae7u", "chaunceyhester");
-printf("I made it here\n");
+
 
 function checkUserExist(){
+    printf("I made it here\n");
     if($mysqli->connect_error){
         printf("No Connect: %s\n",$mysqli->connect_error);
         die("Connection failed: " . $conn->connect_error);
