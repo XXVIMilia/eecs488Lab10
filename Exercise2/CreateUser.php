@@ -2,12 +2,12 @@
 
 $user = $_POST["user"];
 $mysqli = new mysqli("mysql.eecs.ku.edu", "chaunceyhester", "eithae7u", "chaunceyhester");
-
+printf("I made it here\n");
 
 function checkUserExist(){
     if($mysqli->connect_errno){
         printf("No Connect: %s\n",$mysqli->connect_errno);
-        //exit();
+        exit();
     }
     else{
         $query = "select user_id from user_id where exists (Select user_id from user_id where user_id = $user)";
