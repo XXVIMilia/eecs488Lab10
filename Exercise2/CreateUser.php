@@ -10,9 +10,9 @@ function checkUserExist(){
         die("Connection failed: " . $conn->connect_error);
     }
     else{
-        printf("I made it here\n");
         $query = "select user_id from user_id where exists (Select user_id from user_id where user_id = $user)";
         if($result = $mysqli->query($query)){
+            printf("I made it here\n");
             return(true);
         }
         else{
