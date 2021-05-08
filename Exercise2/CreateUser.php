@@ -7,7 +7,7 @@ $mysqli = new mysqli("mysql.eecs.ku.edu", "chaunceyhester", "eithae7u", "chaunce
 function checkUserExist(){
     if($mysqli.connect_errno){
         printf("No Connect: %s\n",$mysqli->connect_errno);
-        exit()
+        exit();
     }
     else{
         $query = "select user_id from users where exists (Select user_id from users where user_id == $user)";
