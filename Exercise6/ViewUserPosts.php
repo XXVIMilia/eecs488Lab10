@@ -8,7 +8,7 @@ echo "</head>";
 
 $user = $_POST["user"];
 $mysqli = new mysqli("mysql.eecs.ku.edu", "chaunceyhester", "eithae7u", "chaunceyhester");
-$query = "select content, author_id from posts where author_id = $user";
+$query = "select content, author_id from posts where author_id = '$user'";
         if($result = $mysqli->query($query)){
             if($result->num_rows > 0){
                 while ($row = $result->fetch_assoc()) {
