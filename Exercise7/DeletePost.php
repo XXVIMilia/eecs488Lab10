@@ -25,12 +25,13 @@ $query = "select user_id from users";
         //     die("Connection failed: " . $mysqli->connect_error);
         // }
 
-printf("Get Fucked");
+
 
 for($i = 0; $i < count($post_id); $i++){
     echo $post[$i] . "<br>";
 }
 
+printf("Get Fucked");
 
 $mysqli->close();
 
