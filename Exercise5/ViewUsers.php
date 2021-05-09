@@ -10,7 +10,7 @@ $mysqli = new mysqli("mysql.eecs.ku.edu", "chaunceyhester", "eithae7u", "chaunce
 $query = "select user_id from users";
         if($result = $mysqli->query($query)){
             if($result->num_rows > 0){
-                $vals = $result->fetch_assoc();
+                $vals = $result->fetch_field();
                 echo $vals["user_id"];
             }
             else{
