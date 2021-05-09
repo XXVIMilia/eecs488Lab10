@@ -7,7 +7,7 @@ echo "<head>";
 echo "</head>";
 
 
-$query = "select * from users";
+$query = "select user_id from users";
         if($result = $mysqli->query($query)){
             if($result->num_rows > 0){
                 echo $result['user_id'];
