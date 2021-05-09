@@ -55,6 +55,9 @@ if($user != ""){
     }
 
 }
+else{
+    echo "<h1> Oi, you gotta submit something";
+}
 
 
 $mysqli->close();
