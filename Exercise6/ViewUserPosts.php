@@ -12,7 +12,7 @@ $query = "select content, author_id from posts where author_id = '$user'";
         if($result = $mysqli->query($query)){
             if($result->num_rows > 0){
                 while ($row = $result->fetch_assoc()) {
-                    echo $row["content"] . "<br>";
+                    echo $row["content"] . "<br><br>";
                 }
             }
             else{
