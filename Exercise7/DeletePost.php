@@ -14,7 +14,7 @@ $mysqli = new mysqli("mysql.eecs.ku.edu", "chaunceyhester", "eithae7u", "chaunce
 for($i = 0; $i < count($post_id); $i++){
     $query = "delete from posts where post_id =" . $post_id[$i];
         if($result = $mysqli->query($query)){
-            echo "Deleted: " . $post_id[$i] . "Successfully<br>";
+            echo "Deleted post # " . $post_id[$i] . " Successfully<br>";
         }
         else{
             $mysqli->close();
