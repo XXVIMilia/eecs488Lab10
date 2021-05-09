@@ -12,11 +12,11 @@ function checkUserExist(){
         if($result = $mysqli->query($query)){
             if($result->num_rows > 0){
                 $mysqli->close();
-                return(false);
+                return(true);
             }
             else{
                 $mysqli->close();
-                return(true);
+                return(false);
             }
         }
         else{
