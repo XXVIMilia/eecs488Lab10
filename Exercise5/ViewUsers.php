@@ -24,7 +24,7 @@ echo "</head>";
 
 
 // $mysqli->close();
-echo "Fuck you"
+echo "Fuck you";
 
 echo "</html>";
 
