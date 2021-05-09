@@ -21,7 +21,6 @@ $query = "select content, author_id from posts where author_id = $user";
         }
         else{
             $mysqli->close();
-            printf("Command Failed");
             die("Connection failed: " . $mysqli->connect_error);
         }
 

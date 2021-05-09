@@ -11,7 +11,7 @@
     <form action="ViewUserPosts.php" method="post">
         <label for="Users">Select a User:</label>
 
-      <select name="users" id="users">
+      <select name="user" id="user">
         <?php
             $mysqli = new mysqli("mysql.eecs.ku.edu", "chaunceyhester", "eithae7u", "chaunceyhester");
             $query = "select user_id from users";
