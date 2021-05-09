@@ -17,14 +17,17 @@
                 echo "<table>";
                 if($result = $mysqli->query($query)){
                     if($result->num_rows > 0){
-                        echo "<tr><th>User</th><th>Post</th></tr>";
+                        echo "<tr><th>User</th><th>Post</th><th>Dlete?</th></tr>";
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>";
                             echo "<td>";
-                            echo "<input type='checkbox' value='false' id='" . $row['user_id'] . "value='" . $row['user_id'] . "'>";
+                            echo $row['user_id'];
                             echo "</td>";
                             echo "<td>";
                             echo $row['content'];
+                            echo "</td>";
+                            echo "<td>";
+                            echo "<input type='checkbox' value='false' id='" . $row['user_id'] . "value='" . $row['user_id'] . "'>";
                             echo "</td>";
                             echo "</tr>";
                         }
