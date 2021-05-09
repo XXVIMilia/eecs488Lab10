@@ -40,7 +40,8 @@ echo "</head>";
 if($user != ""){
     if(checkUserExist()){
         echo "<h1> Thank You for creating an account, $user</h1>";
-        $query = "insert into users values ($users)";
+        $val = "'" . $mysqli->real_escape_string($users) . "'";
+        $query = "insert into users values ($val)";
         if($result = $mysqli->query($query)){
             echo "<h1> Account creation successful</h1>";
         }
