@@ -8,7 +8,7 @@ function checkUserExist(){
     $mysqli = new mysqli("mysql.eecs.ku.edu", "chaunceyhester", "eithae7u", "chaunceyhester");
     if($mysqli->connect_error){
         printf("No Connect: %s\n",$mysqli->connect_error);
-        die("Connection failed: " . $mysqli->connect_error);
+        die("Connection failed: ". $mysqli->connect_error);
     }
     else{
         $query = "select user_id from users where exists (Select user_id from users where user_id = '$user')";
@@ -40,7 +40,7 @@ echo "</head>";
 if($user != ""){
     if(checkUserExist()){
         echo "<h1> Thank You for creating an account, $user</h1>";
-        $query = "insert into users values ($users)";
+        $query = "insert into users ($users)";
         if($result = $mysqli->query($query)){
             echo "<h1> Account creation successful</h1>";
         }
