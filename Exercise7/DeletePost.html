@@ -21,7 +21,7 @@
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>";
                             echo "<td>";
-                            echo "<input type='checkbox' value='false' id='" . $row['user_id'] .  "'>" . $row['user_id'] . "</input>";
+                            echo "<input type='checkbox' value='false' id='" . $row['user_id'] . "value=" . $row['user_id'] . ">";
                             echo "</td>";
                             echo "<td>";
                             echo $row['content'];
