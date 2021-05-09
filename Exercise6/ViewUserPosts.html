@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminHome</title>
+</head>
+<body>
+
+    <form action="ViewUserPosts.php" method="post">
+        <label for="Users">Select a User:</label>
+
+      <select name="users" id="users">
+        <?php
+            $mysqli = new mysqli("mysql.eecs.ku.edu", "chaunceyhester", "eithae7u", "chaunceyhester");
+            $query = "select user_id from users";
+                if($result = $mysqli->query($query)){
+                    if($result->num_rows > 0){
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<option value='$row["user_id"]'>$row["user_id"]</option>";
+                        }
+                    }
+                    else{
+                        echo "No users found";
+                    }
+                }
+                else{
+                    $mysqli->close();
+                    printf("Command Failed");
+                    die("Connection failed: " . $mysqli->connect_error);
+                }
+        
+        
+        $mysqli->close();
+        ?>
+
+      <!-- <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option> -->
+      </select> 
+        
+        <input type="submit">
+    </form>
+    
+</body>
+</html>
