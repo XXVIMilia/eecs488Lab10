@@ -28,7 +28,7 @@ $query = "select user_id from users";
 
 
 for($i = 0; $i < count($post_id); $i++){
-    echo $post[$i] . "<br>";
+    echo $post_id[$i] . "<br>";
 }
 
 printf("Get Fucked");
