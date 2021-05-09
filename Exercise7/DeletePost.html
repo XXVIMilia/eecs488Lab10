@@ -13,11 +13,12 @@
         <table style="width: 100%">
             <?php
                 $mysqli = new mysqli("mysql.eecs.ku.edu", "chaunceyhester", "eithae7u", "chaunceyhester");
-                $query = "select content, author_id from posts";
+                $query = "select content, author_id, post_id from posts";
                 echo "<table>";
                 if($result = $mysqli->query($query)){
                     if($result->num_rows > 0){
                         echo "<tr><th>User&nbsp &nbsp</th><th>Post</th><th>&nbsp &nbspDelete?</th></tr>";
+                        $index = 0;
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>";
                             echo "<td>&nbsp &nbsp";
@@ -27,9 +28,10 @@
                             echo $row['content'];
                             echo "</td>";
                             echo "<td>&nbsp &nbsp";
-                            echo "<input type='checkbox' value='false' id='" . $row['author_id'] . "value='" . $row['author_id'] . "'>";
+                            echo "<input type='checkbox' checked='false' id='post_id[$index]' value='" . $row['post_id'] . "'>";
                             echo "</td>";
                             echo "</tr>";
+                            $index++;
                         }
                     }
                     else{
