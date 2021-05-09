@@ -17,7 +17,7 @@
                 echo "<table>";
                 if($result = $mysqli->query($query)){
                     if($result->num_rows > 0){
-                        echo "<tr><th>User</th><th>Post</th><th>Dlete?</th></tr>";
+                        echo "<tr><th>User      </th><th>Post</th><th>    Delete?</th></tr>";
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>";
                             echo "<td>";
