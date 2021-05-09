@@ -43,7 +43,7 @@ if($user != ""){
         $val = "'" . $mysqli->real_escape_string($user) . "'";
         $query = "insert into users values ($val)";
         if($result = $mysqli->query($query)){
-            echo "<h1> Account creation successful</h1>";
+            echo "<h1> Account creation successful!</h1>";
         }
         else{
             echo "<h1> Account creation unsuccessful</h1>";
